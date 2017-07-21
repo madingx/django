@@ -16,7 +16,8 @@ def setup(set_prefix=True):
     from django.urls import set_script_prefix
     from django.utils.log import configure_logging
 
-    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)
+    configure_logging(settings.LOGGING_CONFIG, settings.LOGGING)#('logging.config.dictConfig',{})
+    #Python中logging.config.dictConfig函数可以方便的配置自己所需要的日志系统
     if set_prefix:
         set_script_prefix(
             '/' if settings.FORCE_SCRIPT_NAME is None else settings.FORCE_SCRIPT_NAME

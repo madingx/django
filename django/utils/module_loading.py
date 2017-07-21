@@ -10,7 +10,9 @@ def import_string(dotted_path):
     last name in the path. Raise ImportError if the import failed.
     """
     try:
-        module_path, class_name = dotted_path.rsplit('.', 1)
+        module_path, class_name = dotted_path.rsplit('.', 1)# 从右至左分割字符串
+        #In [15]: 'logging.config.dictConfig'.rsplit('.', 1)
+        #Out[15]: ['logging.config', 'dictConfig']
     except ValueError as err:
         raise ImportError("%s doesn't look like a module path" % dotted_path) from err
 
