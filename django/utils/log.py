@@ -65,6 +65,7 @@ def configure_logging(logging_config, logging_settings):
     if logging_config:
         # First find the logging configuration function ...
         logging_config_func = import_string(logging_config)
+        #Python中logging.config.dictConfig函数可以方便的配置自己所需要的日志系统
 
         logging.config.dictConfig(DEFAULT_LOGGING)
 
